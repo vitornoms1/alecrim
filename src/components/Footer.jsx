@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Ícone do Instagram (SVG)
 const IconInstagram = () => (
   <svg 
     className="w-6 h-6 text-gray-400 hover:text-white transition-colors" 
@@ -32,20 +31,17 @@ const IconInstagram = () => (
 
 function Footer() {
   return (
-    // Fundo escuro para o rodapé
     <footer className="bg-gray-800 py-8">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         
-        {/* Copyright */}
         <p className="text-gray-400 text-sm text-center md:text-left">
           © {new Date().getFullYear()} Alecrim Casa de Festas. Todos os direitos reservados.
         </p>
         
-        {/* Link do Instagram */}
         <a 
-          href="https://www.instagram.com/alecrimcasadefestas" // Link para o Instagram
-          target="_blank" // Abre em nova aba
-          rel="noopener noreferrer" // Boa prática de segurança
+          href="https://www.instagram.com/alecrimcasadefestas"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center text-gray-400 hover:text-white transition-colors mt-4 md:mt-0"
         >
           <IconInstagram />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 
-// --- (Seus imports de imagem ficam aqui) ---
 import img15Anos from '../assets/15anos.jpg';
 import imgInfantil from '../assets/hulk.jpg';
 import imgFormatura from '../assets/formatura.jpg';
@@ -42,9 +41,6 @@ function NossosServicos() {
             
             <Fade direction="up" delay={index * 200} duration={1200} triggerOnce key={index}>
               
-              {/* --- MUDANÇA AQUI --- 
-                Adicionadas classes de transição e hover
-              */}
               <div className="bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden h-full transition-all duration-300 ease-in-out hover:scale-105">
                 
                 <img 

@@ -243,23 +243,17 @@ function Planos() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
 
-  // --- MUDANÇA ADICIONADA AQUI ---
-  // Este hook vai monitorar a variável 'isModalOpen'
   useEffect(() => {
-    // Se o modal estiver aberto, trava o scroll da página
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      // Se o modal estiver fechado, restaura o scroll
       document.body.style.overflow = 'auto';
     }
 
-    // Função de "limpeza": restaura o scroll se o componente
-    // for removido da tela por algum motivo.
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isModalOpen]); // O 'useEffect' roda quando 'isModalOpen' muda
+  }, [isModalOpen]);
 
   const openModal = (plano) => {
     setSelectedPlan(plano);
