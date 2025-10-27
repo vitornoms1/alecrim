@@ -20,7 +20,7 @@ function Contato() {
 
     const numeroWhatsApp = '555193140276'; 
     
-    const textoFormatado = `Olá, ${nome}, ${mensagem}`;
+    const textoFormatado = `Olá, meu nome é ${nome}, ${mensagem}`;
     
     const textoEncodado = encodeURIComponent(textoFormatado);
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoEncodado}`;
