@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 
-import mapaAlecrim from '../assets/mapa-alecrim.png'; 
+// A importação 'mapaAlecrim' foi removida daqui
 
 const IconPhone = () => (
   <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -60,16 +60,25 @@ function Contato() {
                 <span className="text-lg text-gray-700">Rua 24 de Agosto, 1195 - Bairro Liberdade<br/>Esteio, RS - CEP 93280-000</span>
               </div>
               
+              {/* --- BLOCO DO MAPA ALTERADO --- */}
               <h3 className="text-2xl font-semibold text-gray-800 mb-4 mt-10">
                 Nossa Localização
               </h3>
               <div className="overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src={mapaAlecrim}
-                  alt="Localização do Alecrim Casa de Festas no mapa"
-                  className="w-full h-72 object-cover"
-                />
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3461.64413216896!2d-51.15786832445582!3d-29.815764774903326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f7902e0081d%3A0x861b555133b36480!2sR.%2024%20de%20Agosto%2C%201195%20-%20Liberdade%2C%20Esteio%20-%20RS%2C%2093280-000!5e0!3m2!1spt-BR!2sbr!4v1731385310860!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="288" // 288px (h-72)
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-72" // Usando as classes do Tailwind
+                  title="Localização do Alecrim Casa de Festas"
+                ></iframe>
               </div>
+              {/* --- FIM DO BLOCO DO MAPA --- */}
+
             </div>
           </Fade>
 
