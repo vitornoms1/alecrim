@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-5 h-5 text-alecrim-yellow-dark mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -139,12 +139,12 @@ const PlanoModal = ({ plano, onClose }) => {
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 relative"
+        className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 relative border-t-8 border-alecrim-yellow"
         onClick={(e) => e.stopPropagation()}
       >
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+          className="absolute top-4 right-4 text-gray-400 hover:text-alecrim-yellow-dark"
         >
           <CloseIcon />
         </button>
@@ -154,7 +154,7 @@ const PlanoModal = ({ plano, onClose }) => {
 
         {plano.detalhes.incluso.map((secao) => (
           <div key={secao.titulo} className="mb-4">
-            <h4 className="text-xl font-semibold text-green-700 mb-2">{secao.titulo}</h4>
+            <h4 className="text-xl font-semibold text-yellow-800 mb-2">{secao.titulo}</h4>
             <ul className="space-y-1 list-disc list-inside">
               {secao.itens.map((item, i) => (
                 <li key={i} className="text-gray-700">{item}</li>
@@ -175,26 +175,21 @@ const PlanoModal = ({ plano, onClose }) => {
         )}
 
         <h4 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Valores</h4>
-        <div className="overflow-x-auto rounded-lg border">
+        <div className="overflow-x-auto rounded-lg border border-yellow-100">
           <table className="min-w-[500px] text-left">
-            <thead className="bg-gray-100">
+            <thead className="bg-yellow-50">
               <tr>
-                <th className="p-3 font-semibold">Convidados</th>
-                {plano.titulo === 'Plano POP' ? (
+                <th className="p-3 font-semibold text-yellow-900">Convidados</th>
+                {plano.titulo === 'Plano POP' || plano.titulo === 'Plano Básico' ? (
                   <>
-                    <th className="p-3 font-semibold">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold">Sexta, Sábado, Dom e Feriados</th>
-                  </>
-                ) : plano.titulo === 'Plano Básico' ? (
-                  <>
-                    <th className="p-3 font-semibold">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold">Sexta, Sábado, Dom e Feriados</th>
+                    <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sexta, Sábado, Dom e Feriados</th>
                   </>
                 ) : (
                   <>
-                    <th className="p-3 font-semibold">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold">Sexta e Feriados</th>
-                    <th className="p-3 font-semibold">Sábado e Domingo</th>
+                    <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sexta e Feriados</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sábado e Domingo</th>
                   </>
                 )}
               </tr>
@@ -203,12 +198,7 @@ const PlanoModal = ({ plano, onClose }) => {
               {plano.detalhes.precos.map((linha) => (
                 <tr key={linha.convidados} className="border-t">
                   <td className="p-3 font-medium">{linha.convidados}</td>
-                  {plano.titulo === 'Plano POP' ? (
-                    <>
-                      <td className="p-3">{linha.segQui}</td>
-                      <td className="p-3">{linha.sexSabDom}</td>
-                    </>
-                  ) : plano.titulo === 'Plano Básico' ? (
+                  {plano.titulo === 'Plano POP' || plano.titulo === 'Plano Básico' ? (
                     <>
                       <td className="p-3">{linha.segQui}</td>
                       <td className="p-3">{linha.sexSabDom}</td>
@@ -228,7 +218,7 @@ const PlanoModal = ({ plano, onClose }) => {
 
         <button 
           onClick={onClose} 
-          className="w-full py-3 px-6 rounded-lg font-semibold text-center mt-8 bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors"
+          className="w-full py-3 px-6 rounded-lg font-bold text-center mt-8 bg-alecrim-yellow text-gray-900 hover:bg-alecrim-yellow-dark transition-colors"
         >
           Fechar
         </button>
@@ -292,7 +282,7 @@ function Planos() {
                 <div 
                   className={`
                     bg-white rounded-lg shadow-lg p-6 h-full flex flex-col
-                    ${plano.destaque ? 'border-2 border-green-600 md:scale-105' : 'border border-gray-200'}
+                    ${plano.destaque ? 'border-2 border-alecrim-yellow md:scale-105' : 'border border-gray-200'}
                     transition-transform duration-300
                   `}
                 >
@@ -304,10 +294,10 @@ function Planos() {
                   </p>
                   <div className="text-center mb-6">
                     <span className="text-lg text-gray-500">A partir de</span>
-                    <div className="flex justify-center items-baseline">
-                      <span className="text-2xl font-semibold text-gray-700">R$</span>
-                      <span className="text-5xl font-bold text-gray-800 tracking-tight">{plano.preco.split(',')[0]}</span>
-                      <span className="text-2xl font-semibold text-gray-700">,{plano.preco.split(',')[1]}</span>
+                    <div className="flex justify-center items-baseline text-yellow-800">
+                      <span className="text-2xl font-semibold">R$</span>
+                      <span className="text-5xl font-bold tracking-tight">{plano.preco.split(',')[0]}</span>
+                      <span className="text-2xl font-semibold">,{plano.preco.split(',')[1]}</span>
                     </div>
                   </div>
 
@@ -315,7 +305,7 @@ function Planos() {
                     {plano.resumoItens.map((item, i) => (
                       <li key={i} className="flex items-start">
                         <CheckIcon />
-                        <span className="text-gray-700">{item}</span>
+                        <span className="text-gray-700 font-medium">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -323,8 +313,8 @@ function Planos() {
                   <button 
                     onClick={() => openModal(plano)}
                     className={`
-                      w-full py-3 px-6 rounded-lg font-semibold text-center mt-auto
-                      ${plano.destaque ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}
+                      w-full py-3 px-6 rounded-lg font-bold text-center mt-auto
+                      ${plano.destaque ? 'bg-alecrim-yellow text-gray-900 hover:bg-alecrim-yellow-dark' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}
                       transition-colors
                     `}
                   >

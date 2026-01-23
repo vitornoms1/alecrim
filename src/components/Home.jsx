@@ -23,14 +23,13 @@ function Home() {
 
         <a 
           href="#contato"
-          className="py-3 px-8 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition-all transform hover:scale-105"
+          className="py-3 px-8 bg-alecrim-yellow text-gray-900 font-bold rounded-lg shadow-md hover:bg-alecrim-yellow-dark transition-all transform hover:scale-105"
         >
           Solicitar um Orçamento
         </a>
         
       </Fade>
 
-      {/* Indicador de "Role para baixo" Ajustado */}
       <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center text-gray-400 px-4">
         <span className="text-[13px] md:text-sm mb-2 font-medium text-center leading-tight">
           Role para baixo para saber mais

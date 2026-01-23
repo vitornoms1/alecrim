@@ -6,7 +6,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'alecrim-yellow': '#FFD700',
+        'alecrim-yellow-dark': '#CCAC00',
+      },
+    },
   },
   plugins: [],
 }

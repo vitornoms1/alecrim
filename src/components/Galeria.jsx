@@ -54,10 +54,9 @@ function Galeria() {
         </Fade>
 
         <div className="relative group max-w-6xl mx-auto">
-          {/* Seta Esquerda - hidden no mobile, block no desktop */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:block absolute -left-12 top-1/2 -translate-y-1/2 z-20 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-all focus:outline-none"
+            className="hidden md:block absolute -left-12 top-1/2 -translate-y-1/2 z-20 bg-alecrim-yellow text-gray-900 p-3 rounded-full shadow-lg hover:bg-alecrim-yellow-dark transition-all focus:outline-none"
             aria-label="Anterior"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +64,6 @@ function Galeria() {
             </svg>
           </button>
 
-          {/* Container das Fotos */}
           <div
             ref={scrollRef}
             className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
@@ -85,10 +83,9 @@ function Galeria() {
             ))}
           </div>
 
-          {/* Seta Direita - hidden no mobile, block no desktop */}
           <button
             onClick={() => scroll('right')}
-            className="hidden md:block absolute -right-12 top-1/2 -translate-y-1/2 z-20 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-all focus:outline-none"
+            className="hidden md:block absolute -right-12 top-1/2 -translate-y-1/2 z-20 bg-alecrim-yellow text-gray-900 p-3 rounded-full shadow-lg hover:bg-alecrim-yellow-dark transition-all focus:outline-none"
             aria-label="Próximo"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,7 +94,6 @@ function Galeria() {
           </button>
         </div>
 
-        {/* Texto de instrução visível apenas no celular */}
         <p className="text-center text-gray-400 text-sm mt-6 md:hidden italic">
           Role para o lado para ver mais fotos
         </p>
