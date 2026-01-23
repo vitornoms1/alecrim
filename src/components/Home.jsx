@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 function Home() {
   return (
-    <section className="relative h-screen flex flex-col justify-center items-center bg-gray-100 px-6">
+    <section id="home" className="relative h-screen flex flex-col justify-center items-center bg-gray-100 px-6">
 
       <Fade 
         direction="down" 

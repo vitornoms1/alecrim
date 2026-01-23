@@ -1,4 +1,5 @@
 import './App.css'
+import Navbar from './components/Navbar' // Importação nova
 import Home from './components/Home'
 import NossosServicos from './components/NossosServicos'
 import Galeria from './components/Galeria'
@@ -9,6 +10,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App">
+      <Navbar /> {/* Posicionada no topo de tudo */}
       <Home />
       <NossosServicos />
       <Galeria />

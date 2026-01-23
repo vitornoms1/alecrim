@@ -44,7 +44,7 @@ function Galeria() {
   };
 
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
+    <section id="galeria" className="py-16 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-6 md:px-10 relative">
         
         <Fade direction="down" triggerOnce>
