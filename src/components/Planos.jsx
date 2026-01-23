@@ -91,11 +91,11 @@ const planos = [
       incluso: [
         { 
           titulo: 'Alimentação (Buffet)', 
-          itens: ['Entrada: Batata frita e Cachorro-quente', '15 variedades de salgados (fritos e assados)', 'Doces tradicionais (Brigadeiro, Branquinho, etc)'] 
+          itens: ['Entrada: Batata frita e Cachorro-quente', 'variedades de salgados (fritos e assados)', 'Doces tradicionais (Brigadeiro, Branquinho, etc)'] 
         },
         { 
           titulo: 'Bebidas', 
-          itens: ['Refrigerantes (Linha Pepsi)', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
+          itens: ['Refrigerantes', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
         },
         { 
           titulo: 'Serviços Inclusos', 
