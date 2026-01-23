@@ -95,7 +95,7 @@ const planos = [
         },
         { 
           titulo: 'Bebidas', 
-          itens: ['Refrigerantes (Linha Coca-Cola)', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
+          itens: ['Refrigerantes (Linha Pepsi)', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
         },
         { 
           titulo: 'Serviços Inclusos', 
@@ -238,7 +238,7 @@ function Planos() {
         <div className="container mx-auto px-6">
           <Fade direction="down" triggerOnce>
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-              Nossos Pacotes 2026
+              Nossos Pacotes
             </h2>
             <p className="text-xl text-center text-gray-600 mb-12">
               Escolha a opção ideal para celebrar com a gente.
@@ -299,6 +299,28 @@ function Planos() {
               </Fade>
             ))}
           </div>
+
+          <Fade direction="up" triggerOnce>
+            <div className="mt-16 bg-white rounded-2xl shadow-md p-8 border-2 border-dashed border-alecrim-yellow flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto text-center md:text-left">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">Ficou em dúvida sobre alguma coisa?</h3>
+                <p className="text-gray-600 mt-2">
+                  Envie uma mensagem para nós! Estamos prontos para ajudar você a planejar o seu evento.
+                </p>
+              </div>
+              <a 
+                href="https://wa.me/5551993140276" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg whitespace-nowrap"
+              >
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48 2.244 2.244 3.481 5.229 3.481 8.405 0 6.556-5.333 11.888-11.888 11.888-2.022 0-4.005-.515-5.756-1.493l-6.229 1.633zm6.541-3.791c1.554.922 3.239 1.408 4.965 1.408 5.364 0 9.731-4.367 9.731-9.731 0-2.599-1.012-5.043-2.848-6.88-1.837-1.836-4.281-2.848-6.882-2.848-5.364 0-9.73 4.367-9.73 9.731 0 1.835.518 3.614 1.498 5.16l-.988 3.61 3.704-.972z" />
+                </svg>
+                Chamar no WhatsApp
+              </a>
+            </div>
+          </Fade>
         </div>
       </section>
 
