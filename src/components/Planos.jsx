@@ -71,7 +71,7 @@ const planos = [
       ],
       naoIncluso: ['Alimentação', 'Bebidas', 'Doces e Salgados'],
       precos: [
-        { convidados: 'Até 60', segQui: 'R$ 1.640,00', sexSabDom: 'R$ 2.140,00' } 
+        { convidados: 'Até 60', segQui: 'R$ 1.640,00', sexSabDom: 'R$ 1.990,00' } 
       ]
     }
   },
@@ -83,7 +83,7 @@ const planos = [
     preco: '2.590,00',
     resumoItens: [
       'Buffet com Salgados e Doces Variados',
-      'Bebidas (Refri, Suco, Água) inclusas',
+      'Bebidas inclusas (Linha Pepsi)',
       'Entradas (Batata frita e C. Quente)',
       'Equipe e Decoração Completa',
     ],
@@ -91,11 +91,11 @@ const planos = [
       incluso: [
         { 
           titulo: 'Alimentação (Buffet)', 
-          itens: ['Entrada: Batata frita e Cachorro-quente', 'variedades de salgados (fritos e assados)', 'Doces tradicionais (Brigadeiro, Branquinho, etc)'] 
+          itens: ['Entrada: Batata frita e Cachorro-quente', 'Variedades de salgados (fritos e assados)', 'Doces tradicionais (Brigadeiro, Branquinho, etc)'] 
         },
         { 
           titulo: 'Bebidas', 
-          itens: ['Refrigerantes', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
+          itens: ['Refrigerantes (Linha Pepsi)', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
         },
         { 
           titulo: 'Serviços Inclusos', 
@@ -104,11 +104,7 @@ const planos = [
       ],
       naoIncluso: ['Bebidas alcoólicas', 'Bolo de corte', 'Personalizados extras'],
       precos: [
-        { convidados: '30 Pessoas', segQui: 'R$ 2.590,00', sexFer: 'R$ 2.740,00', sabDom: 'R$ 2.890,00' },
-        { convidados: '40 Pessoas', segQui: 'R$ 3.090,00', sexFer: 'R$ 3.240,00', sabDom: 'R$ 3.390,00' },
-        { convidados: '50 Pessoas', segQui: 'R$ 3.490,00', sexFer: 'R$ 3.640,00', sabDom: 'R$ 3.790,00' },
-        { convidados: '60 Pessoas', segQui: 'R$ 3.890,00', sexFer: 'R$ 4.040,00', sabDom: 'R$ 4.190,00' },
-        { convidados: '70 Pessoas', segQui: 'R$ 4.290,00', sexFer: 'R$ 4.440,00', sabDom: 'R$ 4.590,00' }, 
+        { convidados: '30 Pessoas', segQui: 'R$ 2.590,00', sexSabDom: 'R$ 2.890,00' }
       ]
     }
   }
@@ -145,6 +141,7 @@ const PlanoModal = ({ plano, onClose }) => {
           </div>
         ))}
         
+        {/* CORREÇÃO AQUI: plano.detalhes.naoIncluso */}
         {plano.detalhes.naoIncluso && (
           <div className="mb-4">
             <h4 className="text-xl font-semibold text-red-700 mb-2">Não Incluso</h4>
@@ -162,41 +159,29 @@ const PlanoModal = ({ plano, onClose }) => {
             <thead className="bg-yellow-50">
               <tr>
                 <th className="p-3 font-semibold text-yellow-900">Convidados</th>
-                {plano.titulo === 'Festa POP' || plano.titulo === 'Festa Básica' ? (
-                  <>
-                    <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold text-yellow-900">Sex, Sáb, Dom e Fer</th>
-                  </>
-                ) : (
-                  <>
-                    <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold text-yellow-900">Sexta e Véspera</th>
-                    <th className="p-3 font-semibold text-yellow-900">Sábado e Domingo</th>
-                  </>
-                )}
+                <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
+                <th className="p-3 font-semibold text-yellow-900">Sex, Sáb, Dom e Fer</th>
               </tr>
             </thead>
             <tbody>
-              {plano.detalhes.precos.map((linha) => (
-                <tr key={linha.convidados} className="border-t">
+              {plano.detalhes.precos.map((linha, index) => (
+                <tr key={index} className="border-t">
                   <td className="p-3 font-medium">{linha.convidados}</td>
-                  {plano.titulo === 'Festa POP' || plano.titulo === 'Festa Básica' ? (
-                    <>
-                      <td className="p-3">{linha.segQui}</td>
-                      <td className="p-3">{linha.sexSabDom}</td>
-                    </>
-                  ) : (
-                    <>
-                      <td className="p-3">{linha.segQui}</td>
-                      <td className="p-3">{linha.sexFer}</td>
-                      <td className="p-3">{linha.sabDom}</td>
-                    </>
-                  )}
+                  <td className="p-3">{linha.segQui}</td>
+                  <td className="p-3">{linha.sexSabDom}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        {plano.titulo === 'Festa Completa' && (
+          <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-dashed border-alecrim-yellow">
+            <p className="text-gray-600 text-sm text-center">
+              Para orçamentos de 40 a 70 convidados, entre em contato conosco!
+            </p>
+          </div>
+        )}
 
         <button 
           onClick={onClose} 
@@ -238,7 +223,7 @@ function Planos() {
         <div className="container mx-auto px-6">
           <Fade direction="down" triggerOnce>
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-              Nossos Pacotes
+              Nossos Pacotes 2026
             </h2>
             <p className="text-xl text-center text-gray-600 mb-12">
               Escolha a opção ideal para celebrar com a gente.
