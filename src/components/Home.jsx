@@ -13,11 +13,11 @@ function Home() {
         className="w-full flex flex-col items-center" 
       >
 
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 text-center">
           Alecrim Casa de Festas
         </h1>
 
-        <p className="text-xl text-gray-600 mb-8 text-center">
+        <p className="text-lg md:text-xl text-gray-600 mb-8 text-center max-w-md">
           O espaço perfeito para seus sonhos se tornarem realidade.
         </p>
 
@@ -30,13 +30,15 @@ function Home() {
         
       </Fade>
 
-      {/* Indicador de "Role para baixo" */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400">
-        <span className="text-sm mb-2 font-medium">Role para baixo para saber mais</span>
+      {/* Indicador de "Role para baixo" Ajustado */}
+      <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center text-gray-400 px-4">
+        <span className="text-[13px] md:text-sm mb-2 font-medium text-center leading-tight">
+          Role para baixo para saber mais
+        </span>
         <div className="animate-bounce">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6" 
+            className="h-5 w-5 md:h-6 md:w-6" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
