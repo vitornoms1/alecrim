@@ -13,31 +13,30 @@ const CloseIcon = () => (
   </svg>
 );
 
-
 const planos = [
   {
-    titulo: 'Plano POP',
-    descricao: 'Uma festa mais compacta com decoração pocket. (Até 45 convidados).',
+    titulo: 'Festa POP',
+    descricao: 'Uma festa compacta com decoração pocket. (Até 45 convidados).',
     destaque: false,
     preco: '790,00',
     resumoItens: [
-      'Decoração Pocket (Painel redondo, etc.)',
-      'NÃO INCLUI Garçom',
-      'NÃO INCLUI Alimentação e Bebidas',
-      'NÃO INCLUI Louças',
+      'Decoração Pocket (Painel, Personagens, Cilindros)',
+      'Equipe: 01 Copeira e 01 Monitora',
+      'Estrutura completa (Som, Kids, Cozinha)',
+      'NÃO INCLUI Alimentação, Bebidas e Garçom',
     ],
     detalhes: {
       incluso: [
         { 
           titulo: 'Decoração Pocket', 
-          itens: ['Painel redondo', 'Personagens', 'Bolo fake', 'Cilindros', 'Um arco de balões'] 
+          itens: ['Painel redondo', 'Personagens no tema', 'Bolo fake', 'Cilindros', 'Tapete', '01 arco de balões'] 
         },
         { 
-          titulo: 'Estrutura', 
-          itens: ['Ambiente Climatizado', 'Capacidade até 45 convidados', 'Cozinha (sem utensílios)', 'Sanitários e trocador', 'Internet Wifi', 'Área Kids (sem monitor)'] 
+          titulo: 'Estrutura e Equipe', 
+          itens: ['01 Copeira', '01 Monitora', 'Ambiente Climatizado', 'Área Kids', 'Som ambiente (Bluetooth)', 'Cozinha equipada'] 
         }
       ],
-      naoIncluso: ['Garçom', 'Copeira', 'Alimentação', 'Bebidas', 'Louças'],
+      naoIncluso: ['Garçom', 'Alimentação', 'Bebidas', 'Louças e descartáveis'],
       precos: [
         { convidados: 'Até 45', segQui: 'R$ 790,00', sexSabDom: 'R$ 990,00' }
       ]
@@ -45,92 +44,75 @@ const planos = [
   },
   
   {
-    titulo: 'Plano Básico',
-    descricao: 'Toda a estrutura, equipe e decoração completa. Você só traz a alimentação e bebidas.',
+    titulo: 'Festa Básica',
+    descricao: 'Toda a estrutura, equipe completa e decoração luxo. Você traz a comida.',
     destaque: false,
-    preco: '1.490,00',
+    preco: '1.640,00',
     resumoItens: [
-      'Equipe (Gerente, Garçons, Monitores)',
-      'Decoração completa no tema',
-      'Mesas, cadeiras e toalhas',
+      'Equipe Completa (Gerente, Garçons, etc.)',
+      'Decoração Completa no tema',
+      'Capacidade até 70 convidados',
       'NÃO INCLUI Alimentação e Bebidas',
     ],
     detalhes: {
       incluso: [
         { 
-          titulo: 'Nossa Estrutura', 
-          itens: ['Ambiente Climatizado', 'Capacidade para até 70 convidados', 'Cozinha Equipada', 'Sanitários e trocador', 'Área Kids com espaço reservado', 'Internet Wifi'] 
+          titulo: 'Equipe do Salão', 
+          itens: ['01 Gerente de festa', '02 Garçons', '01 Copeira', '01 Auxiliar de cozinha', '02 Monitores'] 
         },
         { 
           titulo: 'Decoração Completa', 
-          itens: ['Painéis e personagens no tema', 'Móveis decorativos', 'Caixa para presentes', 'Arco descontruído', 'Bolo fake no tema', 'Tapete de grama sintética', 'Mesas redondas e cadeiras de ferro', 'Toalhas e enfeites de centro', 'Convites digitais']
+          itens: ['Painéis e personagens', 'Móveis decorativos', 'Arco desconstruído', 'Convites digitais', 'Caixa de presentes']
         },
         { 
-          titulo: 'Equipe', 
-          itens: ['Gerente de festas', 'Garçons', 'Copeira', 'Auxiliar de Copeira', 'Monitores'] 
-        },
-        { 
-          titulo: 'Area Kids', 
-          itens: ['Brinquedão (com piscina de bolinhas, etc)', 'Gangorras', 'Tombo Legal', 'Brinquedos soltos', 'Escorregador pequeno'] 
+          titulo: 'Estrutura', 
+          itens: ['Mesas redondas e cadeiras de ferro', 'Toalhas e centros de mesa', 'Área Kids completa', 'Internet Wifi'] 
         }
       ],
-      naoIncluso: ['Alimentação', 'Bebidas'],
+      naoIncluso: ['Alimentação', 'Bebidas', 'Doces e Salgados'],
       precos: [
-        { convidados: 'Até 60', segQui: 'R$ 1.490,00', sexSabDom: 'R$ 1.990,00' } 
+        { convidados: 'Até 60', segQui: 'R$ 1.640,00', sexSabDom: 'R$ 2.140,00' } 
       ]
     }
   },
 
   {
     titulo: 'Festa Completa',
-    descricao: 'A experiência completa! Inclui toda a estrutura, equipe e nosso delicioso buffet.',
+    descricao: 'A experiência total! Decoração, equipe e nosso delicioso buffet incluso.',
     destaque: true, 
-    preco: '2.390,00',
+    preco: '2.590,00',
     resumoItens: [
-      'TODA a Estrutura, Decoração e Equipe',
-      'Buffet com salgados e doces',
-      'Bebidas (Refrigerante, Suco, Água)',
-      'Entrada (Batata frita e C. Quente)',
+      'Buffet com Salgados e Doces Variados',
+      'Bebidas (Refri, Suco, Água) inclusas',
+      'Entradas (Batata frita e C. Quente)',
+      'Equipe e Decoração Completa',
     ],
     detalhes: {
       incluso: [
         { 
-          titulo: 'Alimentação', 
-          itens: ['Entrada com batata frita e cachorro quente', 'Coquetel de salgados e doces (com opções de escolha)'] 
+          titulo: 'Alimentação (Buffet)', 
+          itens: ['Entrada: Batata frita e Cachorro-quente', '15 variedades de salgados (fritos e assados)', 'Doces tradicionais (Brigadeiro, Branquinho, etc)'] 
         },
         { 
           titulo: 'Bebidas', 
-          itens: ['Refrigerante', 'Água', 'Água com gás', 'Suco de Uva e Laranja'] 
+          itens: ['Refrigerantes (Linha Coca-Cola)', 'Suco de Uva e Laranja', 'Água mineral (com e sem gás)'] 
         },
         { 
-          titulo: 'Nossa Estrutura', 
-          itens: ['Ambiente Climatizado', 'Capacidade para até 70 convidados', 'Cozinha Equipada', 'Sanitários e trocador', 'Área Kids com espaço reservado', 'Internet Wifi'] 
-        },
-        { 
-          titulo: 'Decoração Completa', 
-          itens: ['Painéis e personagens no tema', 'Móveis decorativos', 'Caixa para presentes', 'Arco descontruído', 'Bolo fake no tema', 'Tapete de grama sintética', 'Mesas redondas e cadeiras de ferro', 'Toalhas e enfeites de centro', 'Convites digitais']
-        },
-        { 
-          titulo: 'Equipe', 
-          itens: ['Gerente de festas', 'Garçons', 'Copeira', 'Auxiliar de Copeira', 'Monitores'] 
-        },
-        { 
-          titulo: 'Area Kids', 
-          itens: ['Brinquedão (com piscina de bolinhas, etc)', 'Gangorras', 'Tombo Legal', 'Brinquedos soltos', 'Escorregador pequeno'] 
+          titulo: 'Serviços Inclusos', 
+          itens: ['Equipe completa de atendimento', 'Decoração no tema escolhido', 'Louças para o serviço (Pratos, talheres, copos)'] 
         }
       ],
-      naoIncluso: ['Itens Opcionais (Bebida Alcoólica, Chopp, Massa, etc)'],
+      naoIncluso: ['Bebidas alcoólicas', 'Bolo de corte', 'Personalizados extras'],
       precos: [
-        { convidados: '30 Pessoas', segQui: 'R$ 2.390,00', sexFer: 'R$ 2.540,00', sabDom: 'R$ 2.690,00' },
-        { convidados: '40 Pessoas', segQui: 'R$ 2.890,00', sexFer: 'R$ 3.040,00', sabDom: 'R$ 3.190,00' },
-        { convidados: '50 Pessoas', segQui: 'R$ 3.290,00', sexFer: 'R$ 3.440,00', sabDom: 'R$ 3.590,00' },
-        { convidados: '60 Pessoas', segQui: 'R$ 3.690,00', sexFer: 'R$ 3.840,00', sabDom: 'R$ 3.990,00' },
-        { convidados: '70 Pessoas', segQui: 'R$ 4.090,00', sexFer: 'R$ 4.240,00', sabDom: 'R$ 4.390,00' }, 
+        { convidados: '30 Pessoas', segQui: 'R$ 2.590,00', sexFer: 'R$ 2.740,00', sabDom: 'R$ 2.890,00' },
+        { convidados: '40 Pessoas', segQui: 'R$ 3.090,00', sexFer: 'R$ 3.240,00', sabDom: 'R$ 3.390,00' },
+        { convidados: '50 Pessoas', segQui: 'R$ 3.490,00', sexFer: 'R$ 3.640,00', sabDom: 'R$ 3.790,00' },
+        { convidados: '60 Pessoas', segQui: 'R$ 3.890,00', sexFer: 'R$ 4.040,00', sabDom: 'R$ 4.190,00' },
+        { convidados: '70 Pessoas', segQui: 'R$ 4.290,00', sexFer: 'R$ 4.440,00', sabDom: 'R$ 4.590,00' }, 
       ]
     }
   }
 ];
-
 
 const PlanoModal = ({ plano, onClose }) => {
   return (
@@ -174,21 +156,21 @@ const PlanoModal = ({ plano, onClose }) => {
           </div>
         )}
 
-        <h4 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Valores</h4>
+        <h4 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Tabela de Valores (2026)</h4>
         <div className="overflow-x-auto rounded-lg border border-yellow-100">
           <table className="min-w-[500px] text-left">
             <thead className="bg-yellow-50">
               <tr>
                 <th className="p-3 font-semibold text-yellow-900">Convidados</th>
-                {plano.titulo === 'Plano POP' || plano.titulo === 'Plano Básico' ? (
+                {plano.titulo === 'Festa POP' || plano.titulo === 'Festa Básica' ? (
                   <>
                     <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold text-yellow-900">Sexta, Sábado, Dom e Feriados</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sex, Sáb, Dom e Fer</th>
                   </>
                 ) : (
                   <>
                     <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
-                    <th className="p-3 font-semibold text-yellow-900">Sexta e Feriados</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sexta e Véspera</th>
                     <th className="p-3 font-semibold text-yellow-900">Sábado e Domingo</th>
                   </>
                 )}
@@ -198,7 +180,7 @@ const PlanoModal = ({ plano, onClose }) => {
               {plano.detalhes.precos.map((linha) => (
                 <tr key={linha.convidados} className="border-t">
                   <td className="p-3 font-medium">{linha.convidados}</td>
-                  {plano.titulo === 'Plano POP' || plano.titulo === 'Plano Básico' ? (
+                  {plano.titulo === 'Festa POP' || plano.titulo === 'Festa Básica' ? (
                     <>
                       <td className="p-3">{linha.segQui}</td>
                       <td className="p-3">{linha.sexSabDom}</td>
@@ -218,16 +200,14 @@ const PlanoModal = ({ plano, onClose }) => {
 
         <button 
           onClick={onClose} 
-          className="w-full py-3 px-6 rounded-lg font-bold text-center mt-8 bg-alecrim-yellow text-gray-900 hover:bg-alecrim-yellow-dark transition-colors"
+          className="w-full py-3 px-6 rounded-lg font-bold text-center mt-8 bg-alecrim-yellow text-gray-900 hover:bg-alecrim-yellow-dark transition-colors shadow-md"
         >
-          Fechar
+          Fechar Detalhes
         </button>
-
       </div>
     </div>
   );
 };
-
 
 function Planos() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -239,10 +219,7 @@ function Planos() {
     } else {
       document.body.style.overflow = 'auto';
     }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    return () => { document.body.style.overflow = 'auto'; };
   }, [isModalOpen]);
 
   const openModal = (plano) => {
@@ -255,18 +232,16 @@ function Planos() {
     setTimeout(() => setSelectedPlan(null), 300); 
   };
 
-
   return (
     <>
       <section className="py-20 bg-gray-50" id="planos">
         <div className="container mx-auto px-6">
-
           <Fade direction="down" triggerOnce>
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-              Conheça Nossos Pacotes
+              Nossos Pacotes 2026
             </h2>
             <p className="text-xl text-center text-gray-600 mb-12">
-              Temos a opção perfeita para sua festa dos sonhos.
+              Escolha a opção ideal para celebrar com a gente.
             </p>
           </Fade>
 
@@ -315,10 +290,10 @@ function Planos() {
                     className={`
                       w-full py-3 px-6 rounded-lg font-bold text-center mt-auto
                       ${plano.destaque ? 'bg-alecrim-yellow text-gray-900 hover:bg-alecrim-yellow-dark' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}
-                      transition-colors
+                      transition-colors shadow-sm
                     `}
                   >
-                    Ver Todos os Detalhes
+                    Ver Valores Detalhados
                   </button>
                 </div>
               </Fade>

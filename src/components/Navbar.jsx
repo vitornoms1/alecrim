@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-// Importação correta da logo
+import { motion } from 'framer-motion';
 import logoImg from '../assets/logoremovebg.png';
 
-function Navbar() {
+function Navbar({ showLogo }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md border-b-2 border-alecrim-yellow">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         
-        {/* Lado Esquerdo: Logo */}
-        <div className="flex items-center">
-          <a href="#home">
-            <img 
-              src={logoImg} 
-              alt="Alecrim Casa de Festas" 
-              className="h-12 md:h-16 w-auto hover:scale-105 transition-transform"
-            />
-          </a>
+        {/* Espaço da Logo */}
+        <div className="flex items-center w-[150px] min-h-[48px] md:min-h-[64px]">
+          {showLogo && (
+            <motion.a 
+              href="#home"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <img src={logoImg} alt="Alecrim Casa de Festas" className="navbar-logo-target h-12 md:h-16 w-auto hover:scale-105 transition-transform"/>
+            </motion.a>
+          )}
         </div>
 
         {/* Lado Direito: Links (Desktop) */}
         <div className="hidden md:flex space-x-8 items-center">
-          {/* IDs atualizados para corresponder às seções */}
           <a href="#home" className="text-gray-700 hover:text-alecrim-yellow-dark font-semibold transition-colors">Home</a>
           <a href="#servicos" className="text-gray-700 hover:text-alecrim-yellow-dark font-semibold transition-colors">Serviços</a>
           <a href="#galeria" className="text-gray-700 hover:text-alecrim-yellow-dark font-semibold transition-colors">Galeria</a>

@@ -62,7 +62,7 @@ function NossosServicos() {
               E você vê muito mais aqui na Alecrim!
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-6">
-              Nosso espaço é totalmente versátil. Também realizamos <strong>Casamentos, Carnavais, Eventos Corporativos, Confraternizações</strong> e qualquer momento especial que você queira celebrar.
+              Nosso espaço é totalmente versátil. Também realizamos <strong>Casamentos, Carnavais, Eventos Corporativos e Confraternizações</strong> com buffet personalizado e equipe completa.
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-yellow-700 font-bold italic">
               <span>#Casamentos</span>
