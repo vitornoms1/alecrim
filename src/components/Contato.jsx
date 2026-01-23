@@ -30,7 +30,7 @@ function Contato() {
 
 
   return (
-    <section className="py-20 bg-white">
+    <section id="contato" className="py-20 bg-white">
       <div className="container mx-auto px-6">
 
         <Fade direction="down" triggerOnce>
