@@ -80,7 +80,7 @@ const planos = [
     titulo: 'Festa Completa',
     descricao: 'A experiência total! Decoração, equipe e nosso delicioso buffet incluso.',
     destaque: true, 
-    preco: '2.590,00',
+    preco: null, // Removido o preço fixo
     resumoItens: [
       'Buffet com Salgados e Doces Variados',
       'Bebidas inclusas (Linha Pepsi)',
@@ -103,9 +103,7 @@ const planos = [
         }
       ],
       naoIncluso: ['Bebidas alcoólicas', 'Bolo de corte', 'Personalizados extras'],
-      precos: [
-        { convidados: '30 Pessoas', segQui: 'R$ 2.590,00', sexSabDom: 'R$ 2.890,00' }
-      ]
+      precos: [] // Tabela vazia para este plano
     }
   }
 ];
@@ -141,7 +139,6 @@ const PlanoModal = ({ plano, onClose }) => {
           </div>
         ))}
         
-        {/* CORREÇÃO AQUI: plano.detalhes.naoIncluso */}
         {plano.detalhes.naoIncluso && (
           <div className="mb-4">
             <h4 className="text-xl font-semibold text-red-700 mb-2">Não Incluso</h4>
@@ -153,34 +150,47 @@ const PlanoModal = ({ plano, onClose }) => {
           </div>
         )}
 
-        <h4 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Tabela de Valores (2026)</h4>
-        <div className="overflow-x-auto rounded-lg border border-yellow-100">
-          <table className="min-w-[500px] text-left">
-            <thead className="bg-yellow-50">
-              <tr>
-                <th className="p-3 font-semibold text-yellow-900">Convidados</th>
-                <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
-                <th className="p-3 font-semibold text-yellow-900">Sex, Sáb, Dom e Fer</th>
-              </tr>
-            </thead>
-            <tbody>
-              {plano.detalhes.precos.map((linha, index) => (
-                <tr key={index} className="border-t">
-                  <td className="p-3 font-medium">{linha.convidados}</td>
-                  <td className="p-3">{linha.segQui}</td>
-                  <td className="p-3">{linha.sexSabDom}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {plano.titulo === 'Festa Completa' && (
-          <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-dashed border-alecrim-yellow">
-            <p className="text-gray-600 text-sm text-center">
-              Para orçamentos de 40 a 70 convidados, entre em contato conosco!
+        {/* LÓGICA DA TABELA OU WHATSAPP */}
+        {plano.titulo === 'Festa Completa' ? (
+          <div className="mt-8 p-6 bg-yellow-50 rounded-xl border-2 border-dashed border-alecrim-yellow text-center">
+            <h4 className="text-2xl font-bold text-gray-800 mb-2">Valores Sob Consulta</h4>
+            <p className="text-gray-600 mb-6">
+              Este pacote é personalizado de acordo com o número de convidados e itens escolhidos. 
+              Fale conosco agora para receber o orçamento completo!
             </p>
+            <a 
+              href="https://wa.me/5551993140276?text=Olá! Gostaria de um orçamento para o pacote Festa Completa." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
+            >
+              Consultar no WhatsApp
+            </a>
           </div>
+        ) : (
+          <>
+            <h4 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Tabela de Valores (2026)</h4>
+            <div className="overflow-x-auto rounded-lg border border-yellow-100">
+              <table className="min-w-[500px] text-left">
+                <thead className="bg-yellow-50">
+                  <tr>
+                    <th className="p-3 font-semibold text-yellow-900">Convidados</th>
+                    <th className="p-3 font-semibold text-yellow-900">Segunda à Quinta</th>
+                    <th className="p-3 font-semibold text-yellow-900">Sex, Sáb, Dom e Fer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {plano.detalhes.precos.map((linha, index) => (
+                    <tr key={index} className="border-t">
+                      <td className="p-3 font-medium">{linha.convidados}</td>
+                      <td className="p-3">{linha.segQui}</td>
+                      <td className="p-3">{linha.sexSabDom}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
         )}
 
         <button 
@@ -252,13 +262,22 @@ function Planos() {
                   <p className="text-gray-600 text-center mb-6 h-16">
                     {plano.descricao}
                   </p>
+                  
                   <div className="text-center mb-6">
-                    <span className="text-lg text-gray-500">A partir de</span>
-                    <div className="flex justify-center items-baseline text-yellow-800">
-                      <span className="text-2xl font-semibold">R$</span>
-                      <span className="text-5xl font-bold tracking-tight">{plano.preco.split(',')[0]}</span>
-                      <span className="text-2xl font-semibold">,{plano.preco.split(',')[1]}</span>
-                    </div>
+                    {plano.preco ? (
+                      <>
+                        <span className="text-lg text-gray-500">A partir de</span>
+                        <div className="flex justify-center items-baseline text-yellow-800">
+                          <span className="text-2xl font-semibold">R$</span>
+                          <span className="text-5xl font-bold tracking-tight">{plano.preco.split(',')[0]}</span>
+                          <span className="text-2xl font-semibold">,{plano.preco.split(',')[1]}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="py-2">
+                        <span className="text-3xl font-bold text-yellow-800 tracking-tight">Sob Consulta</span>
+                      </div>
+                    )}
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
@@ -278,7 +297,7 @@ function Planos() {
                       transition-colors shadow-sm
                     `}
                   >
-                    Ver Valores Detalhados
+                    {plano.preco ? 'Ver Valores Detalhados' : 'Ver Detalhes do Pacote'}
                   </button>
                 </div>
               </Fade>
